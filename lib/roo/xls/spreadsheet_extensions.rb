@@ -4,7 +4,7 @@ module Roo
     # having a spreadsheet with 30,000 nil rows appended
     # to the actual data.  (it happens and your RAM will love me)
     module SpreadsheetEachSkipBlanks
-      def each skip=dimensions[0]
+      def each(skip = dimensions[0])
         blanks = 0
         skip.upto(dimensions[1] - 1) do |i|
           if row(i).any?

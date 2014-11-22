@@ -2,6 +2,6 @@ require 'spreadsheet'
 
 book = Spreadsheet.open 'tmp.xls'
 sheet = book.worksheet 0
-sheet.each do |row| puts row[0] end
+sheet.each { |row| puts row[0] }
 
-FileUtils.rm("tmp.xls")
+FileUtils.rm('tmp.xls')

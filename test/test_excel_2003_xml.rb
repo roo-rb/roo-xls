@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/test_helper'
+require 'test_helper'
 
 class TestRooExcel < MiniTest::Test
   def with_spreadsheet(name)
@@ -11,16 +11,16 @@ class TestRooExcel < MiniTest::Test
   def test_date_to_float_conversion
     with_each_spreadsheet('datetime_floatconv') do |oo|
       assert_nothing_raised(NoMethodError) do
-        oo.cell('a',1)
-        oo.cell('a',2)
+        oo.cell('a', 1)
+        oo.cell('a', 2)
       end
     end
   end
 
   def test_ruby_spreadsheet_formula_bug
-     with_each_spreadsheet('formula_parse_error') do |oo|
-       assert_equal '5026', oo.cell(2,3)
-       assert_equal '5026', oo.cell(3,3)
-     end
+    with_each_spreadsheet('formula_parse_error') do |oo|
+      assert_equal '5026', oo.cell(2, 3)
+      assert_equal '5026', oo.cell(3, 3)
+    end
   end
 end

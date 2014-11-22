@@ -20,8 +20,8 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "roo", ">= 2.0.0"
   spec.add_dependency "nokogiri"
-  spec.add_dependency "spreadsheet", "> 0.6.4"
+  spec.add_dependency "spreadsheet", "> 0.9.0"
 
-  spec.add_development_dependency "bundler", "~> 1.7"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "bundler", ">= 1.7"
+  spec.add_development_dependency "rake", ">= 10.0"
 end

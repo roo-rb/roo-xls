@@ -1,4 +1,5 @@
-require File.expand_path("../../lib/roo-xls", __FILE__)
+require 'simplecov'
+require 'roo-xls'
 
 require 'vcr'
 

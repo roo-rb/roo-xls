@@ -1,4 +1,4 @@
-# Roo::Xls
+# Roo::Xls [![BuildStatus](https://travis-ci.org/roo-rb/roo-xls.svg)](https://travis-ci.org/roo-rb/roo-xls)[![Code Climate](https://codeclimate.com/github/roo-rb/roo-xls/badges/gpa.svg)](https://codeclimate.com/github/roo-rb/roo-xls)
 
 This library extends Roo to add support for handling class Excel files, including:
 

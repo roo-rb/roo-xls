@@ -40,25 +40,30 @@ module Roo
       @fonts = {}
     end
 
+    attr_reader :workbook
+
+    def worksheets
+      @worksheets ||= workbook.worksheets
+    end
+
     def encoding=(codepage)
       @workbook.encoding = codepage
     end
 
     # returns an array of sheet names in the spreadsheet
     def sheets
-      @workbook.worksheets.collect { |worksheet| normalize_string(worksheet.name) }
+      @sheets ||= worksheets.collect { |worksheet| normalize_string(worksheet.name) }
     end
 
     # this method lets you find the worksheet with the most data
     def longest_sheet
-      sheet(@workbook.worksheets.inject do|m, o|
+      sheet(worksheets.inject do|m, o|
         o.row_count > m.row_count ? o : m
       end.name)
     end
 
     # returns the content of a cell. The upper left corner is (1,1) or ('A',1)
-    def cell(row, col, sheet = nil)
-      sheet ||= @default_sheet
+    def cell(row, col, sheet = default_sheet)
       validate_sheet!(sheet)
 
       read_cells(sheet)
@@ -87,8 +92,7 @@ module Roo
     # * :formula
     # * :time
     # * :datetime
-    def celltype(row, col, sheet = nil)
-      sheet ||= @default_sheet
+    def celltype(row, col, sheet = default_sheet)
       read_cells(sheet)
       row, col = normalize(row, col)
       begin
@@ -115,8 +119,7 @@ module Roo
     end
 
     # Given a cell, return the cell's font
-    def font(row, col, sheet = nil)
-      sheet ||= @default_sheet
+    def font(row, col, sheet = default_sheet)
       read_cells(sheet)
       row, col = normalize(row, col)
       @fonts[sheet][[row, col]]
@@ -124,8 +127,7 @@ module Roo
 
     # shows the internal representation of all cells
     # mainly for debugging purposes
-    def to_s(sheet = nil)
-      sheet ||= @default_sheet
+    def to_s(sheet = default_sheet)
       read_cells(sheet)
       @cell[sheet].inspect
     end
@@ -136,7 +138,7 @@ module Roo
     def sheet_no(name)
       return name - 1 if name.is_a?(Fixnum)
       i = 0
-      @workbook.worksheets.each do |worksheet|
+      worksheets.each do |worksheet|
         return i if name == normalize_string(worksheet.name)
         i += 1
       end
@@ -239,8 +241,7 @@ module Roo
     end
 
     # read all cells in the selected sheet
-    def read_cells(sheet = nil)
-      sheet ||= @default_sheet
+    def read_cells(sheet = default_sheet)
       validate_sheet!(sheet)
       return if @cells_read[sheet]
 

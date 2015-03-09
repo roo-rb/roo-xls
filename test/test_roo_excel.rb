@@ -64,28 +64,28 @@ class TestRooExcel < MiniTest::Test
       oo.default_sheet = 'Tabelle1'
       assert_equal 1, oo.first_row
       assert_equal 18, oo.last_row
-      assert_equal Roo::OpenOffice.letter_to_number('A'), oo.first_column
-      assert_equal Roo::OpenOffice.letter_to_number('G'), oo.last_column
+      assert_equal ::Roo::Utils.letter_to_number('A'), oo.first_column
+      assert_equal ::Roo::Utils.letter_to_number('G'), oo.last_column
       oo.default_sheet = 'Name of Sheet 2'
       assert_equal 5, oo.first_row
       assert_equal 14, oo.last_row
-      assert_equal Roo::OpenOffice.letter_to_number('B'), oo.first_column
-      assert_equal Roo::OpenOffice.letter_to_number('E'), oo.last_column
+      assert_equal ::Roo::Utils.letter_to_number('B'), oo.first_column
+      assert_equal ::Roo::Utils.letter_to_number('E'), oo.last_column
       oo.default_sheet = 'Sheet3'
       assert_equal 1, oo.first_row
       assert_equal 1, oo.last_row
-      assert_equal Roo::OpenOffice.letter_to_number('A'), oo.first_column
-      assert_equal Roo::OpenOffice.letter_to_number('BA'), oo.last_column
+      assert_equal ::Roo::Utils.letter_to_number('A'), oo.first_column
+      assert_equal ::Roo::Utils.letter_to_number('BA'), oo.last_column
       oo.default_sheet = 'Sheet4'
       assert_equal 1, oo.first_row
       assert_equal 1, oo.last_row
-      assert_equal Roo::OpenOffice.letter_to_number('A'), oo.first_column
-      assert_equal Roo::OpenOffice.letter_to_number('E'), oo.last_column
+      assert_equal ::Roo::Utils.letter_to_number('A'), oo.first_column
+      assert_equal ::Roo::Utils.letter_to_number('E'), oo.last_column
       oo.default_sheet = 'Sheet5'
       assert_equal 1, oo.first_row
       assert_equal 6, oo.last_row
-      assert_equal Roo::OpenOffice.letter_to_number('A'), oo.first_column
-      assert_equal Roo::OpenOffice.letter_to_number('E'), oo.last_column
+      assert_equal ::Roo::Utils.letter_to_number('A'), oo.first_column
+      assert_equal ::Roo::Utils.letter_to_number('E'), oo.last_column
     end
   end
 

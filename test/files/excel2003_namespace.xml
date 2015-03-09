@@ -1,0 +1,197 @@
+﻿<?xml version='1.0'?>
+<?mso-application progid='Excel.Sheet'?>
+<s:Workbook xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:s="urn:schemas-microsoft-com:office:spreadsheet">
+  <s:Styles>
+    <s:Style s:ID="ItemStyle">
+      <s:NumberFormat s:Format="General Number" />
+    </s:Style>
+  </s:Styles>
+  <s:Worksheet s:Name="YDNA DYS Values">
+    <s:Table>
+      <s:Row>
+        <s:Cell>
+          <s:Data s:Type="String">DYS393</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS390</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS19</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS391</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS385</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS426</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS388</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS439</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS389I</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS392</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS389II</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS458</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS459</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS455</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS454</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS447</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS437</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS448</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS449</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS464</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS460</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">Y-GATA-H4</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">YCAII</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS456</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS607</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS576</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS570</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">CDY</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS442</s:Data>
+        </s:Cell>
+        <s:Cell>
+          <s:Data s:Type="String">DYS438</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">13</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">24</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">16</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">11</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">14-15</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">11</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">13</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">13</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">13</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">11</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">31</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">18</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">8-10</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">11</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">11</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">25</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">15</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">20</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">32</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">12-14-15-15</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">10</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">10</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">21-21</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">15</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">12</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">17</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">19</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">33-35</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">10</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="ItemStyle">
+          <s:Data s:Type="String">10</s:Data>
+        </s:Cell>
+      </s:Row>
+    </s:Table>
+  </s:Worksheet>
+</s:Workbook>

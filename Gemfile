@@ -24,7 +24,7 @@ group :local_development do
   gem 'guard-bundler', require: false
   gem 'guard-preek', require: false
   gem 'guard-rubocop', require: false
-  gem 'guard-reek', github: 'pericles/guard-reek', require: false
+  gem 'guard-reek', git: 'https://github.com/pericles/guard-reek', require: false
   gem 'pry'
   gem 'transpec'
 end

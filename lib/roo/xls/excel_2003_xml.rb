@@ -21,7 +21,7 @@ class Roo::Excel2003XML < Roo::Base
       @doc = ::Roo::Utils.load_xml(@filename)
     end
     namespace = @doc.namespaces.select{|xmlns, urn| urn == 'urn:schemas-microsoft-com:office:spreadsheet'}.keys.last
-    @namespace = namespace.nil? || namespace.empty? ? 'ss' : namespace.split(':').last
+    @namespace = (namespace.nil? || namespace.empty?) ? 'ss' : namespace.split(':').last
     super(filename, options)
     @formula = {}
     @style = {}

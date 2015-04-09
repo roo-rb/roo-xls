@@ -4,9 +4,9 @@ source 'https://rubygems.org'
 gemspec
 
 if ENV['TRAVIS']
-  gem 'roo', '>= 2.0.0', github: 'roo-rb/roo'
+  gem 'roo', '>= 2.0.0beta1', github: 'roo-rb/roo'
 else
-  gem 'roo', '>= 2.0.0', path: ::File.expand_path('../../roo', __FILE__)
+  gem 'roo', '>= 2.0.0beta1', path: ::File.expand_path('../../roo', __FILE__)
 end
 
 group :test do

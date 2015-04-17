@@ -1,4 +1,6 @@
-# Roo::Xls [![BuildStatus](https://travis-ci.org/roo-rb/roo-xls.svg)](https://travis-ci.org/roo-rb/roo-xls)[![Code Climate](https://codeclimate.com/github/roo-rb/roo-xls/badges/gpa.svg)](https://codeclimate.com/github/roo-rb/roo-xls)[![Coverage Status](https://coveralls.io/repos/roo-rb/roo-xls/badge.svg?branch=master)](https://coveralls.io/r/roo-rb/roo-xls?branch=master)
+# Roo::Xls
+
+[![Build Status](https://img.shields.io/travis/roo-rb/roo-xls.svg?style=flat-square)](https://travis-ci.org/roo-rb/roo-xls) [![Code Climate](https://img.shields.io/codeclimate/github/roo-rb/roo-xls.svg?style=flat-square)](https://codeclimate.com/github/roo-rb/roo-xls) [![Coverage Status](https://img.shields.io/coveralls/roo-rb/roo-xls.svg?style=flat-square)](https://coveralls.io/r/roo-rb/roo-xls) [![Gem Version](https://img.shields.io/gem/v/roo-xls.svg?style=flat-square)](https://rubygems.org/gems/roo-xls)
 
 This library extends Roo to add support for handling class Excel files, including:
 

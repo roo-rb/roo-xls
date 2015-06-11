@@ -23,18 +23,23 @@ module Roo
       file_warning = options[:file_warning] || :error
       mode = options[:mode] || 'rb+'
 
-      file_type_check(filename, '.xls', 'an Excel', file_warning, packed)
-      make_tmpdir do |tmpdir|
-        filename = download_uri(filename, tmpdir) if uri?(filename)
-        filename = open_from_stream(filename[7..-1], tmpdir) if filename.is_a?(::String) && filename[0, 7] == 'stream:'
-        filename = unzip(filename, tmpdir) if packed == :zip
-
-        @filename = filename
-        unless File.file?(@filename)
-          fail IOError, "file #{@filename} does not exist"
-        end
+      if is_stream?(filename)
         @workbook = ::Spreadsheet.open(filename, mode)
+      else
+        file_type_check(filename, '.xls', 'an Excel', file_warning, packed)
+        make_tmpdir do |tmpdir|
+          filename = download_uri(filename, tmpdir) if uri?(filename)
+          filename = open_from_stream(filename[7..-1], tmpdir) if filename.is_a?(::String) && filename[0, 7] == 'stream:'
+          filename = unzip(filename, tmpdir) if packed == :zip
+
+          @filename = filename
+          unless File.file?(@filename)
+            fail IOError, "file #{@filename} does not exist"
+          end
+          @workbook = ::Spreadsheet.open(filename, mode)
+        end
       end
+
       super(filename, options)
       @formula = {}
       @fonts = {}

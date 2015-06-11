@@ -1,5 +1,6 @@
 # -- encoding : utf-8 --
 require 'test_helper'
+require 'stringio'
 
 class TestRooExcel < MiniTest::Test
   def with_spreadsheet(name)
@@ -1090,4 +1091,12 @@ Sheet 3:
   #     assert_equal 'ist "e" im Nenner von H(s)', excel.cell('b', 5)
   #   end
   # end
+
+  def test_excel_via_stringio
+    io = StringIO.new(
+      File.read(File.join(TESTDIR, 'simple_spreadsheet.xls')))
+    spreadsheet = ::Roo::Spreadsheet.open(io, extension: '.xls')
+    spreadsheet.default_sheet = spreadsheet.sheets.first
+    assert_equal 'Task 1', spreadsheet.cell('f', 4)
+  end
 end

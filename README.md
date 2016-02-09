@@ -12,7 +12,7 @@ of a formula but not the formula itself.
 
 ## License
 
-While Roo and Roo::Xls are licensed under the MIT / Expat license, please note that the 'spreadsheet' gem [is released under](https://github.com/zdavatz/spreadsheet/blob/master/LICENSE.txt) the GPLv3 license.
+While Roo and Roo::Xls are licensed under the MIT / Expat license, please note that Roo::Xls relies on the 'spreadsheet' gem which itself is [released under](https://github.com/zdavatz/spreadsheet/blob/master/LICENSE.txt) the GPLv3 license.
 
 ## Installation
 

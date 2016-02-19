@@ -12,7 +12,13 @@ of a formula but not the formula itself.
 
 ## License
 
-While Roo and Roo::Xls are licensed under the MIT / Expat license, please note that the 'spreadsheet' gem [is released under](https://github.com/zdavatz/spreadsheet/blob/master/LICENSE.txt) the GPLv3 license.
+While Roo and Roo::Xls are licensed under the MIT / Expat license, please note that the 'spreadsheet' gem is in a somewhat ambiguous state in terms of licensing.
+
+It is ostensibly [licensed under the GPLv3](https://github.com/zdavatz/spreadsheet/blob/master/LICENSE.txt), but the author [claims you need a commercial license](http://spreadsheet.ch/2014/10/24/using-ruby-spreadsheet-on-heroku-with-dynos/) to use it as part of a public-facing, closed-source service.
+
+This interpretation [is at odds with the FSF's intent and interpretation of the license](http://www.gnu.org/licenses/gpl-faq.html#UnreleasedMods), as this scenario is the reason for the existence of the [GNU AGPLv3](https://www.gnu.org/licenses/agpl.txt).  The maintainer of the 'spreadsheet' gem, however, [disagrees](https://github.com/zdavatz/spreadsheet/issues/167).
+
+As such, until this matter is resolved one way or another, you may wish to take the precautionary step of assuming that use of the 'spreadsheet' gem confers the same obligations as those under the GNU AGPLv3 -- unless a commercial license is obtained -- rather than those of the GPLv3.
 
 ## Installation
 

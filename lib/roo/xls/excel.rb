@@ -137,6 +137,18 @@ module Roo
       @cell[sheet].inspect
     end
 
+    def each_row
+      (first_row..last_row).each do |index|
+        yield(row(index))
+      end
+    end
+
+    def each_row_with_index
+      (first_row..last_row).each do |index|
+        yield(row(index), index)
+      end
+    end
+
     private
 
     # converts name of a sheet to index (0,1,2,..)

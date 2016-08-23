@@ -9,7 +9,7 @@ class Roo::Excel2003XML < Roo::Base
     packed = options[:packed]
     file_warning = options[:file_warning] || :error
 
-    make_tmpdir do |tmpdir|
+    ::Dir.mktmpdir(Roo::TEMP_PREFIX, ENV['ROO_TMP']) do |tmpdir|
       filename = download_uri(filename, tmpdir) if uri?(filename)
       filename = unzip(filename, tmpdir) if packed == :zip
 

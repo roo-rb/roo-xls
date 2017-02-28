@@ -3,23 +3,24 @@ require 'base64'
 require 'nokogiri'
 
 class Roo::Excel2003XML < Roo::Base
+  extend Roo::Tempdir
   # initialization and opening of a spreadsheet file
   # values for packed: :zip
   def initialize(filename, options = {})
     packed = options[:packed]
     file_warning = options[:file_warning] || :error
 
-    make_tmpdir do |tmpdir|
-      filename = download_uri(filename, tmpdir) if uri?(filename)
-      filename = unzip(filename, tmpdir) if packed == :zip
+    tmpdir = self.class.make_tempdir(self, nil, nil)
+    filename = download_uri(filename, tmpdir) if uri?(filename)
+    filename = unzip(filename, tmpdir) if packed == :zip
 
-      file_type_check(filename, '.xml', 'an Excel 2003 XML', file_warning)
-      @filename = filename
-      unless File.file?(@filename)
-        fail IOError, "file #{@filename} does not exist"
-      end
-      @doc = ::Roo::Utils.load_xml(@filename)
+    file_type_check(filename, '.xml', 'an Excel 2003 XML', file_warning)
+    @filename = filename
+    unless File.file?(@filename)
+      fail IOError, "file #{@filename} does not exist"
     end
+    @doc = ::Roo::Utils.load_xml(@filename)
+
     namespace = @doc.namespaces.select{|xmlns, urn| urn == 'urn:schemas-microsoft-com:office:spreadsheet'}.keys.last
     @namespace = (namespace.nil? || namespace.empty?) ? 'ss' : namespace.split(':').last
     super(filename, options)

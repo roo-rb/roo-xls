@@ -14,6 +14,8 @@ module Roo
       rescue LoadError
         false
       end
+    INTEGER = 1.class
+    BIGNUM = (1**60).class
 
     attr_reader :workbook
 
@@ -141,7 +143,7 @@ module Roo
 
     # converts name of a sheet to index (0,1,2,..)
     def sheet_no(name)
-      return name - 1 if name.is_a?(Fixnum)
+      return name - 1 if name.is_a?(INTEGER)
       i = 0
       worksheets.each do |worksheet|
         return i if name == normalize_string(worksheet.name)
@@ -338,7 +340,7 @@ module Roo
     def read_cell(row, idx)
       cell = read_cell_content(row, idx)
       case cell
-      when Float, Integer, Fixnum, Bignum
+      when Float, Integer, INTEGER, BIGNUM
         value_type = :float
         value = cell.to_f
       when ::Spreadsheet::Link

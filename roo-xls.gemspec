@@ -19,8 +19,13 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "roo", ">= 2.0.0beta1", "< 3"
-  spec.add_dependency "nokogiri"
   spec.add_dependency "spreadsheet", "> 0.9.0"
+
+  if RUBY_VERSION >= '2.1'
+    spec.add_dependency "nokogiri"
+  else
+    spec.add_dependency "nokogiri", "~> 1.6.0"
+  end
 
   spec.add_development_dependency "bundler", ">= 1.7"
   spec.add_development_dependency "rake", ">= 10.0"

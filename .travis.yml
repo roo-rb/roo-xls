@@ -1,11 +1,15 @@
 language: ruby
 rvm:
-  - 2.0.0
+  - 2.0
   - 2.1
+  - 2.2
+  - 2.3
+  - 2.4.0
   - ruby-head
   - jruby-19mode # JRuby in 1.9 mode
   - rbx-2
 matrix:
   allow_failures:
     - rvm: ruby-head
+    - rvm: rbx-2
 bundler_args: --without local_development

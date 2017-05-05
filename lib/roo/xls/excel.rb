@@ -1,6 +1,7 @@
 require 'roo/xls/version'
 require 'roo/base'
 require 'spreadsheet'
+require 'tmpdir'
 
 module Roo
   # Class for handling Excel-Spreadsheets

@@ -1,6 +1,7 @@
 require 'date'
 require 'base64'
 require 'nokogiri'
+require 'tmpdir'
 
 class Roo::Excel2003XML < Roo::Base
   # initialization and opening of a spreadsheet file

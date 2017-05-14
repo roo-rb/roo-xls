@@ -1,6 +1,7 @@
 require 'date'
 require 'base64'
 require 'nokogiri'
+require 'tmpdir'
 
 class Roo::Excel2003XML < Roo::Base
   # initialization and opening of a spreadsheet file
@@ -9,7 +10,7 @@ class Roo::Excel2003XML < Roo::Base
     packed = options[:packed]
     file_warning = options[:file_warning] || :error
 
-    make_tmpdir do |tmpdir|
+    Dir.mktmpdir do |tmpdir|
       filename = download_uri(filename, tmpdir) if uri?(filename)
       filename = unzip(filename, tmpdir) if packed == :zip
 

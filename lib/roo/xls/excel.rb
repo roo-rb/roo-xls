@@ -1,6 +1,7 @@
 require 'roo/xls/version'
 require 'roo/base'
 require 'spreadsheet'
+require 'tmpdir'
 
 module Roo
   # Class for handling Excel-Spreadsheets
@@ -27,7 +28,7 @@ module Roo
         @workbook = ::Spreadsheet.open(filename, mode)
       else
         file_type_check(filename, '.xls', 'an Excel', file_warning, packed)
-        make_tmpdir do |tmpdir|
+        Dir.mktmpdir do |tmpdir|
           filename = download_uri(filename, tmpdir) if uri?(filename)
           filename = open_from_stream(filename[7..-1], tmpdir) if filename.is_a?(::String) && filename[0, 7] == 'stream:'
           filename = unzip(filename, tmpdir) if packed == :zip

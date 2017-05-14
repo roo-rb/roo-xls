@@ -5,7 +5,7 @@ require 'spreadsheet'
 module Roo
   # Class for handling Excel-Spreadsheets
   class Excel < Roo::Base
-    FORMULAS_MESSAGE = 'the spreadsheet gem does not support forumulas, so roo can not.'
+    FORMULAS_MESSAGE = 'the spreadsheet gem does not support formulas, so roo can not.'
     CHARGUESS =
       begin
         require 'charguess'

@@ -302,8 +302,7 @@ module Roo
       cell = cell.to_s.to_f
       if cell < 1.0
         value_type = :time
-        f = cell * 24.0 * 60.0 * 60.0
-        secs = f.round
+        secs = cell * 24.0 * 60.0 * 60.0
         h = (secs / 3600.0).floor
         secs = secs - 3600 * h
         m = (secs / 60.0).floor

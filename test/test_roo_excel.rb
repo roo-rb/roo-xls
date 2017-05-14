@@ -670,6 +670,7 @@ Sheet 3:
       assert_equal DateTime.new(2013, 11, 5, 11, 45, 00), oo.cell('a', 8)
       assert_equal DateTime.new(2013, 11, 5, 11, 45, 00), oo.cell('b', 8)
       assert_equal DateTime.new(2013, 11, 5, 11, 45, 00), oo.cell('c', 8)
+      assert_equal 296.72, oo.cell('a', 9)
     end
   end
 

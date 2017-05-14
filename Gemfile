@@ -4,10 +4,12 @@ source 'https://rubygems.org'
 gemspec
 
 if ENV['TRAVIS']
-  gem 'roo', '>= 2.0.0beta1', github: 'roo-rb/roo'
+  gem 'roo', '>= 2.0.0beta1', git: 'https://github.com/roo-rb/roo.git'
 else
   gem 'roo', '>= 2.0.0beta1', path: ::File.expand_path('../../roo', __FILE__)
 end
+
+gem 'activesupport', '~> 4.2.0' if RUBY_VERSION < '2.2'
 
 group :test do
   # additional testing libs

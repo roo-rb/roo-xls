@@ -30,12 +30,14 @@ module Roo
         file_type_check(filename, '.xls', 'an Excel', file_warning, packed)
         Dir.mktmpdir do |tmpdir|
           filename = download_uri(filename, tmpdir) if uri?(filename)
-          filename = open_from_stream(filename[7..-1], tmpdir) if filename.is_a?(::String) && filename[0, 7] == 'stream:'
+          if filename.is_a?(::String) && filename[0, 7] == 'stream:'
+            filename = open_from_stream(filename[7..-1], tmpdir)
+          end
           filename = unzip(filename, tmpdir) if packed == :zip
 
           @filename = filename
           unless File.file?(@filename)
-            fail IOError, "file #{@filename} does not exist"
+            raise IOError, "file #{@filename} does not exist"
           end
           @workbook = ::Spreadsheet.open(filename, mode)
         end
@@ -63,7 +65,7 @@ module Roo
 
     # this method lets you find the worksheet with the most data
     def longest_sheet
-      sheet(worksheets.inject do|m, o|
+      sheet(worksheets.inject do |m, o|
         o.row_count > m.row_count ? o : m
       end.name)
     end
@@ -73,20 +75,16 @@ module Roo
       validate_sheet!(sheet)
 
       read_cells(sheet)
-      fail 'should be read' unless @cells_read[sheet]
+      raise 'should be read' unless @cells_read[sheet]
       row, col = normalize(row, col)
       if celltype(row, col, sheet) == :date
         yyyy, mm, dd = @cell[sheet][[row, col]].split('-')
         return Date.new(yyyy.to_i, mm.to_i, dd.to_i)
       end
       if celltype(row, col, sheet) == :string
-        return platform_specific_encoding(@cell[sheet][[row, col]])
+        platform_specific_encoding(@cell[sheet][[row, col]])
       else
-        if @cell[sheet] && @cell[sheet][[row, col]]
-          return @cell[sheet][[row, col]]
-        else
-          return nil
-        end
+        @cell[sheet] && @cell[sheet][[row, col]]
       end
     end
 
@@ -115,13 +113,13 @@ module Roo
 
     # returns NO formula in excel spreadsheets
     def formula(_row, _col, _sheet = nil)
-      fail NotImplementedError, FORMULAS_MESSAGE
+      raise NotImplementedError, FORMULAS_MESSAGE
     end
     alias_method :formula?, :formula
 
     # returns NO formulas in excel spreadsheets
     def formulas(_sheet = nil)
-      fail NotImplementedError, FORMULAS_MESSAGE
+      raise NotImplementedError, FORMULAS_MESSAGE
     end
 
     # Given a cell, return the cell's font
@@ -148,12 +146,12 @@ module Roo
         return i if name == normalize_string(worksheet.name)
         i += 1
       end
-      fail StandardError, "sheet '#{name}' not found"
+      raise StandardError, "sheet '#{name}' not found"
     end
 
     def normalize_string(value)
       value = every_second_null?(value) ? remove_every_second_null(value) : value
-      if CHARGUESS && encoding = CharGuess.guess(value)
+      if CHARGUESS && (encoding = CharGuess.guess(value))
         encoding.encode Encoding::UTF_8
       else
         platform_specific_encoding(value)
@@ -170,9 +168,7 @@ module Roo
         else
           value
         end
-      if every_second_null?(result)
-        result = remove_every_second_null(result)
-      end
+      result = remove_every_second_null(result) if every_second_null?(result)
       result
     end
 
@@ -204,8 +200,8 @@ module Roo
       @cell_type[sheet] = {} unless @cell_type[sheet]
       @cell_type[sheet][key] = value_type
       @formula[sheet] = {} unless @formula[sheet]
-      @formula[sheet][key] = formula  if formula
-      @cell[sheet]    = {} unless @cell[sheet]
+      @formula[sheet][key] = formula if formula
+      @cell[sheet] = {} unless @cell[sheet]
       @fonts[sheet] = {} unless @fonts[sheet]
       @fonts[sheet][key] = font
 
@@ -256,7 +252,7 @@ module Roo
       worksheet.each(0) do |row|
         (0..row.size).each do |cell_index|
           cell = row.at(cell_index)
-          next if cell.nil?  # skip empty cells
+          next if cell.nil? # skip empty cells
           next if cell.class == ::Spreadsheet::Formula && cell.value.nil? # skip empty formula cells
           value_type, v =
             if date_or_time?(row, cell_index)
@@ -305,17 +301,18 @@ module Roo
         f = cell * 24.0 * 60.0 * 60.0
         secs = f.round
         h = (secs / 3600.0).floor
-        secs = secs - 3600 * h
+        secs -= 3600 * h
         m = (secs / 60.0).floor
-        secs = secs - 60 * m
+        secs -= 60 * m
         s = secs
         value = h * 3600 + m * 60 + s
       else
-        if row.at(idx).class == ::Spreadsheet::Formula
-          datetime = row.send(:_datetime, cell)
-        else
-          datetime = row.datetime(idx)
-        end
+        datetime =
+          if row.at(idx).class == ::Spreadsheet::Formula
+            row.send(:_datetime, cell)
+          else
+            row.datetime(idx)
+          end
         if datetime.hour != 0 ||
            datetime.min != 0 ||
            datetime.sec != 0
@@ -323,11 +320,12 @@ module Roo
           value = datetime
         else
           value_type = :date
-          if row.at(idx).class == ::Spreadsheet::Formula
-            value = row.send(:_date, cell)
-          else
-            value = row.date(idx)
-          end
+          value =
+            if row.at(idx).class == ::Spreadsheet::Formula
+              row.send(:_date, cell)
+            else
+              row.date(idx)
+            end
           value = sprintf('%04d-%02d-%02d', value.year, value.month, value.day)
         end
       end

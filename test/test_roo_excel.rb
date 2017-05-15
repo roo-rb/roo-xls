@@ -1035,7 +1035,7 @@ Sheet 3:
       i += 1
     end
     if letter == '' || number == 0
-      fail ArgumentError
+      raise ArgumentError
     end
     [letter, number]
   end

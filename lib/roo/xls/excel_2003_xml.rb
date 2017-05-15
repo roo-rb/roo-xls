@@ -17,7 +17,7 @@ class Roo::Excel2003XML < Roo::Base
       file_type_check(filename, '.xml', 'an Excel 2003 XML', file_warning)
       @filename = filename
       unless File.file?(@filename)
-        fail IOError, "file #{@filename} does not exist"
+        raise IOError, "file #{@filename} does not exist"
       end
       @doc = ::Roo::Utils.load_xml(@filename)
     end
@@ -241,7 +241,7 @@ class Roo::Excel2003XML < Roo::Base
       end
     end
     unless sheet_found
-      fail RangeError, "Unable to find sheet #{sheet} for reading"
+      raise RangeError, "Unable to find sheet #{sheet} for reading"
     end
     @cells_read[sheet] = true
   end

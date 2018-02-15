@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Marc Siegel</Author>
+  <LastAuthor>Marc Siegel</LastAuthor>
+  <Created>2018-02-14T22:21:05Z</Created>
+  <LastSaved>2018-02-15T17:12:56Z</LastSaved>
+  <Version>16.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>16940</WindowHeight>
+  <WindowWidth>27640</WindowWidth>
+  <WindowTopX>3380</WindowTopX>
+  <WindowTopY>5080</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s62">
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s63">
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Color="#00FF00"
+    ss:Italic="1"/>
+  </Style>
+  <Style ss:ID="s65">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Font ss:FontName="Courier New" x:Family="Roman" ss:Size="24" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s67">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Color="#00FF00"
+    ss:Italic="1"/>
+  </Style>
+  <Style ss:ID="s69">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s71">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Color="#FF0000"/>
+  </Style>
+  <Style ss:ID="s73">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Color="#FF0000"
+    ss:Underline="Single"/>
+  </Style>
+  <Style ss:ID="s75">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Color="#0066CC"/>
+  </Style>
+  <Style ss:ID="s77">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s79">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Italic="1"/>
+  </Style>
+  <Style ss:ID="s81">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Underline="Single"/>
+  </Style>
+  <Style ss:ID="s83">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Color="#666699"
+    ss:Bold="1" ss:Italic="1" ss:Underline="Single"/>
+  </Style>
+  <Style ss:ID="s90">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Color="#00FF00"
+    ss:Bold="1" ss:Italic="1"/>
+  </Style>
+  <Style ss:ID="s91">
+   <Alignment ss:Vertical="Center" ss:WrapText="1"/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Color="#008080"
+    ss:Bold="1" ss:Italic="1"/>
+  </Style>
+  <Style ss:ID="s97">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Color="#ED7D31"
+    ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s100">
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Color="#ED7D31"
+    ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s110">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="12" ss:Color="#FF0000"
+    ss:Underline="Single"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="13" ss:ExpandedRowCount="20" x:FullColumns="1"
+   x:FullRows="1" ss:StyleID="s62" ss:DefaultColumnWidth="65"
+   ss:DefaultRowHeight="16">
+   <Column ss:Index="10" ss:StyleID="s62" ss:AutoFitWidth="0" ss:Width="96"/>
+   <Column ss:StyleID="s63" ss:AutoFitWidth="0" ss:Width="173"/>
+   <Column ss:StyleID="s62" ss:AutoFitWidth="0" ss:Width="141"/>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:MergeAcross="9" ss:MergeDown="4" ss:StyleID="s65"><Data
+      ss:Type="String">Roo::Xls Test of Font Colors</Data></Cell>
+    <Cell ss:MergeDown="6" ss:StyleID="s67"><Data ss:Type="String">This entire COLUMN should be ITALIC and GREEN</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Span="3"/>
+   <Row ss:Index="6" ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">(The above should be font &quot;Courier New&quot;, size 24)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:MergeAcross="9" ss:StyleID="s69"><Data ss:Type="String">This font should be BLACK</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:MergeAcross="9" ss:StyleID="s71"><Data ss:Type="String">This font should be RED</Data></Cell>
+    <Cell ss:MergeDown="5" ss:StyleID="s73"><Data ss:Type="String">…except this cell, which should be UNDERLINED and RED</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:MergeAcross="9" ss:StyleID="s75"><Data ss:Type="String">This font should be BLUE</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:MergeAcross="9" ss:StyleID="s77"><Data ss:Type="String">This font should be BOLD</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:MergeAcross="9" ss:StyleID="s79"><Data ss:Type="String">This font should be ITALIC</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:MergeAcross="9" ss:StyleID="s81"><Data ss:Type="String">This font should be UNDERLINED</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:MergeAcross="9" ss:StyleID="s83"><Data ss:Type="String">This font should be BOLD, ITALIC, UNDERLINED, and PURPLE</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s100">
+    <Cell ss:MergeAcross="4" ss:StyleID="s97"><Data ss:Type="String">This entire ROW should be BOLD and ORANGE</Data></Cell>
+    <Cell ss:MergeAcross="4" ss:StyleID="s110"><Data ss:Type="String">…except this cell, which should be UNDERLINED and RED</Data></Cell>
+    <Cell ss:MergeDown="5" ss:StyleID="s90"><Data ss:Type="String">As the combination of ROW and COLUMN styles, this cell should be BOLD, ITALIC, and GREEN</Data></Cell>
+    <Cell><Data ss:Type="String">Just row style</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="12" ss:StyleID="s91"/>
+    <Cell ss:StyleID="s91"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="12" ss:StyleID="s91"/>
+    <Cell ss:StyleID="s91"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="12" ss:StyleID="s91"/>
+    <Cell ss:StyleID="s91"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="12" ss:StyleID="s91"/>
+    <Cell ss:StyleID="s91"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="12" ss:StyleID="s91"/>
+    <Cell ss:StyleID="s91"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="11"><Data ss:Type="String">Just column style</Data></Cell>
+    <Cell ss:StyleID="s91"/>
+    <Cell ss:StyleID="s91"/>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <Print>
+    <ValidPrinterInfo/>
+    <VerticalResolution>0</VerticalResolution>
+   </Print>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>25</ActiveRow>
+     <ActiveCol>7</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

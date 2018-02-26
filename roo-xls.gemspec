@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "roo", ">= 2.0.0beta1", "< 3"
+  spec.add_dependency "roo", ">= 2.0.0", "< 3"
   spec.add_dependency "spreadsheet", "> 0.9.0"
 
   if RUBY_VERSION >= '2.1'

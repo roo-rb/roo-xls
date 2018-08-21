@@ -48,8 +48,6 @@ module Roo
       @fonts = {}
     end
 
-    attr_reader :workbook
-
     def worksheets
       @worksheets ||= workbook.worksheets
     end

@@ -26,10 +26,8 @@ class TestExcel2013XML < MiniTest::Test
   def test_date_to_float_conversion
     with_xml_spreadsheet('datetime_floatconv') do |oo|
       oo.default_sheet = oo.sheets.first
-      assert_nothing_raised(NoMethodError) do
-        oo.cell('a', 1)
-        oo.cell('a', 2)
-      end
+      assert oo.cell('a', 1)
+      assert oo.cell('a', 2)
     end
   end
 

@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["ruby.ruby.ruby.roo@gmail.com"]
   spec.summary       = "Roo::Excel can access the contents of classic xls files."
   spec.description   = "Roo can access the contents of various spreadsheet files. It can handle\n* OpenOffice\n* Excel\n* Google spreadsheets\n* Excelx\n* LibreOffice\n* CSV"
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/roo-rb/roo-xls"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

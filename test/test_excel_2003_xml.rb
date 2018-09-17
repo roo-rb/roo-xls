@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TestRooExcel < MiniTest::Test
+class TestExcel2013XML < MiniTest::Test
   def with_xml_spreadsheet(name)
     yield ::Roo::Excel2003XML.new(File.join(TESTDIR, "#{name}.xml"))
   end
@@ -25,15 +25,15 @@ class TestRooExcel < MiniTest::Test
   # This test just checks for that exception to make sure it's not raised in this case
   def test_date_to_float_conversion
     with_xml_spreadsheet('datetime_floatconv') do |oo|
-      assert_nothing_raised(NoMethodError) do
-        oo.cell('a', 1)
-        oo.cell('a', 2)
-      end
+      oo.default_sheet = oo.sheets.first
+      assert oo.cell('a', 1)
+      assert oo.cell('a', 2)
     end
   end
 
   def test_ruby_spreadsheet_formula_bug
     with_xml_spreadsheet('formula_parse_error') do |oo|
+      oo.default_sheet = oo.sheets.first
       assert_equal '5026', oo.cell(2, 3)
       assert_equal '5026', oo.cell(3, 3)
     end

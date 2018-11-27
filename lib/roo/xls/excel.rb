@@ -2,6 +2,7 @@ require 'roo/xls/version'
 require 'roo/base'
 require 'spreadsheet'
 require 'tmpdir'
+require 'pry'
 
 module Roo
   # Class for handling Excel-Spreadsheets
@@ -87,6 +88,7 @@ module Roo
     end
 
     # returns the type of a cell:
+    # * :integer
     # * :float
     # * :string,
     # * :date
@@ -205,6 +207,8 @@ module Roo
 
       @cell[sheet][key] =
         case value_type
+        when :integer
+          v.to_i
         when :float
           v.to_f
         when :string
@@ -335,7 +339,10 @@ module Roo
     def read_cell(row, idx)
       cell = read_cell_content(row, idx)
       case cell
-      when Float, Integer
+      when Integer
+        value_type = :integer
+        value = cell.to_i
+      when Float
         value_type = :float
         value = cell.to_f
       when ::Spreadsheet::Link

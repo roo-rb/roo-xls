@@ -87,6 +87,7 @@ module Roo
     end
 
     # returns the type of a cell:
+    # * :integer
     # * :float
     # * :string,
     # * :date
@@ -205,6 +206,8 @@ module Roo
 
       @cell[sheet][key] =
         case value_type
+        when :integer
+          v.to_i
         when :float
           v.to_f
         when :string
@@ -336,8 +339,13 @@ module Roo
       cell = read_cell_content(row, idx)
       case cell
       when Float, Integer
-        value_type = :float
-        value = cell.to_f
+        if cell.to_i == cell
+          value_type = :integer
+          value = cell.to_i
+        else
+          value_type = :float
+          value = cell.to_f
+        end
       when ::Spreadsheet::Link
         value_type = :link
         value = cell

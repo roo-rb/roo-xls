@@ -193,7 +193,7 @@ class TestRooExcel < MiniTest::Test
       assert_equal 1, oo.cell('A', 2).to_i
       assert_equal 2, oo.cell('B', 2).to_i
       assert_equal 1, oo.cell('C', 2).to_i
-      assert_equal 1, oo.cell('A', 3)
+      assert_equal 1.25, oo.cell('A', 3)
       assert_equal 3, oo.cell('B', 3)
       assert_equal 1, oo.cell('C', 3)
       assert_equal 'A', oo.cell('A', 4)
@@ -215,9 +215,9 @@ class TestRooExcel < MiniTest::Test
       assert_equal '1:string', oo.cell(2, 3) + ':' + oo.celltype(2, 3).to_s
 
       # Cells values in row 3:
-      assert_equal '1.0:float', oo.cell(3, 1).to_s + ':' + oo.celltype(3, 1).to_s
-      assert_equal '3.0:float', oo.cell(3, 2).to_s + ':' + oo.celltype(3, 2).to_s
-      assert_equal '1.0:float', oo.cell(3, 3).to_s + ':' + oo.celltype(3, 3).to_s
+      assert_equal '1.25:float', oo.cell(3, 1).to_s + ':' + oo.celltype(3, 1).to_s
+      assert_equal '3:integer', oo.cell(3, 2).to_s + ':' + oo.celltype(3, 2).to_s
+      assert_equal '1:integer', oo.cell(3, 3).to_s + ':' + oo.celltype(3, 3).to_s
 
       # Cells values in row 4:
       assert_equal 'A:string', oo.cell(4, 1) + ':' + oo.celltype(4, 1).to_s

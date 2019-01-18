@@ -9,8 +9,6 @@ else
   gem 'roo', '>= 2.0.0beta1', path: ::File.expand_path('../../roo', __FILE__)
 end
 
-gem 'activesupport', '~> 4.2.0' if RUBY_VERSION < '2.2'
-
 group :test do
   # additional testing libs
   gem 'webmock'
@@ -28,5 +26,4 @@ group :local_development do
   gem 'guard-rubocop', require: false
   gem 'guard-reek', git: 'https://github.com/pericles/guard-reek', require: false
   gem 'pry'
-  gem 'transpec'
 end

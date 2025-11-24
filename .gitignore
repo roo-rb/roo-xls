@@ -14,3 +14,7 @@
 mkmf.log
 .idea
 .DS_Store
+
+# Appraisal
+/gemfiles/.bundle/
+/gemfiles/*.gemfile.lock

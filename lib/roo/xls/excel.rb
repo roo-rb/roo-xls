@@ -283,7 +283,7 @@ module Roo
       format = row.format(idx)
       if format.date_or_time?
         cell = read_cell_content(row, idx)
-        true if Float(cell) > 0 rescue false
+        true if (Float(cell, exception: false) || 0) > 0
       else
         false
       end
@@ -307,7 +307,13 @@ module Roo
       else
         datetime =
           if row.at(idx).class == ::Spreadsheet::Formula
-            row.send(:_datetime, cell)
+            if row.respond_to?(:set_datetime, true)
+              # 1.3.4+
+              row.send(:set_datetime, cell)
+            else
+              # 1.3.3-
+              row.send(:_datetime, cell)
+            end
           else
             row.datetime(idx)
           end
@@ -320,7 +326,13 @@ module Roo
           value_type = :date
           value =
             if row.at(idx).class == ::Spreadsheet::Formula
-              row.send(:_date, cell)
+              if row.respond_to?(:set_date, true)
+                # 1.3.4+
+                row.send(:set_date, cell)
+              else
+                # 1.3.3-
+                row.send(:_date, cell)
+              end
             else
               row.date(idx)
             end

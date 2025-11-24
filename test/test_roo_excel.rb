@@ -2,7 +2,7 @@
 require 'test_helper'
 require 'stringio'
 
-class TestRooExcel < MiniTest::Test
+class TestRooExcel < Minitest::Test
   def with_spreadsheet(name)
     yield ::Roo::Spreadsheet.open(File.join(TESTDIR, "#{name}.xls"))
   end

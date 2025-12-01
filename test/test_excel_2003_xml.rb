@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TestExcel2013XML < MiniTest::Test
+class TestExcel2013XML < Minitest::Test
   def with_xml_spreadsheet(name)
     yield ::Roo::Excel2003XML.new(File.join(TESTDIR, "#{name}.xml"))
   end

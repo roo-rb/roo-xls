@@ -18,6 +18,12 @@ RSpec::Core::RakeTask.new(:spec)
 Coveralls::RakeTask.new
 
 default_task = [:test, :spec]
-default_task << 'coveralls:push' if ENV['TRAVIS']
+default_task << 'coveralls:push' if ENV['CI']
 
-task default: default_task
+if !ENV["APPRAISAL_INITIALIZED"] && !ENV['CI']
+  task :default do
+    sh "appraisal install && appraisal rake"
+  end
+else
+  task default: default_task
+end

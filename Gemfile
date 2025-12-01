@@ -3,10 +3,10 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in roo-xls.gemspec
 gemspec
 
-if ENV['TRAVIS']
+if ENV['CI']
   gem 'roo', '>= 2.0.0beta1', git: 'https://github.com/roo-rb/roo.git'
 else
-  gem 'roo', '>= 2.0.0beta1', path: ::File.expand_path('../../roo', __FILE__)
+  gem 'roo', '>= 2.0.0beta1', '< 3'
 end
 
 group :test do
@@ -14,8 +14,9 @@ group :test do
   gem 'webmock'
   gem 'shoulda'
   gem 'rspec', '>= 3.0.0'
-  gem 'simplecov', '>= 0.9.0', :require => false
-  gem 'coveralls', :require => false
+  gem 'simplecov', '>= 0.21', require: false
+  gem 'simplecov-lcov', '>= 0.8', require: false
+  gem 'coveralls', require: false
 end
 
 group :local_development do

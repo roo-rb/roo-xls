@@ -49,4 +49,4 @@ jobs:
       - name: Upload Gem to GitHub Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release upload ${{ needs.release-please.outputs.tag_name }} ./*.gem --clobber
+        run: gh release upload ${{ needs.release-please.outputs.tag_name }} ./pkg/*.gem --clobber

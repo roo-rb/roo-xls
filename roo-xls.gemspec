@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Roo can access the contents of various spreadsheet files. It can handle\n* OpenOffice\n* Excel\n* Google spreadsheets\n* Excelx\n* LibreOffice\n* CSV"
   spec.homepage      = "https://github.com/roo-rb/roo-xls"
   spec.license       = "MIT"
+  spec.metadata["changelog_uri"] = spec.homepage + '/blob/master/CHANGELOG.md'
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
@@ -21,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version  = ">= 3.1.0"
 
   spec.add_dependency "roo", ">= 2.0.0", "< 4"
-  spec.add_dependency "spreadsheet", "> 0.9.0"
+  spec.add_dependency "spreadsheet", ">= 1.3.4", "< 2"
   spec.add_dependency "csv"
 
   spec.add_dependency "nokogiri"
@@ -29,6 +30,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", ">= 1.7"
   spec.add_development_dependency "rake", ">= 10.0"
   spec.add_development_dependency "minitest", ">= 5.19.0"
-  spec.add_development_dependency "appraisal", "~> 2.0", ">= 2.5.0"
   spec.add_development_dependency "matrix"
 end

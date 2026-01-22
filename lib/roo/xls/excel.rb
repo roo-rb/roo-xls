@@ -207,6 +207,8 @@ module Roo
         case value_type
         when :float
           v.to_f
+        when :integer
+          v
         when :string
           v
         when :date
@@ -350,6 +352,9 @@ module Roo
       when Float, Integer
         value_type = :float
         value = cell.to_f
+      when Integer, Fixnum, Bignum
+        value_type = :integer
+        value = cell
       when ::Spreadsheet::Link
         value_type = :link
         value = cell

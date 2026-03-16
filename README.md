@@ -37,7 +37,33 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+begin
+  require "bundler/inline"
+rescue LoadError => e
+  $stderr.puts "Bundler version 1.10 or later is required. Please update your Bundler"
+  raise e
+end
+
+gemfile(true) do
+  source "https://rubygems.org"
+
+  git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+  gem "roo-xls"
+  gem "minitest"
+end
+
+require "roo-xls"
+require "minitest/autorun"
+
+class BugTest < Minitest::Test
+  def test_stuff
+    sheet = Roo::Excel.new('/Users/gturner/downloads/table.xls')
+    puts sheet.row(1)
+  end
+end
+```
 
 ## Contributing
 

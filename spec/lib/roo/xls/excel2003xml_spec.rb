@@ -17,6 +17,16 @@ RSpec.describe Roo::Excel2003XML do
     end
   end
 
+  describe 'damaged file' do
+    context 'open file' do
+      let(:test_file) { 'excel2003_damaged.xml' }
+
+      it 'loads the file without error' do
+        expect { subject }.to_not raise_error
+      end
+    end
+  end
+
   describe '#cell' do
     subject { super().cell(cell[:row], cell[:col]) }
 

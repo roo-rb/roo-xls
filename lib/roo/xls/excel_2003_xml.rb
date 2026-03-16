@@ -22,7 +22,12 @@ class Roo::Excel2003XML < Roo::Base
       @doc = ::Roo::Utils.load_xml(@filename)
     end
     namespace = @doc.namespaces.select { |_, urn| urn == 'urn:schemas-microsoft-com:office:spreadsheet' }.keys.last
-    @namespace = (namespace.nil? || namespace.empty?) ? 'ss' : namespace.split(':').last
+    if namespace.to_s.empty? || namespace.split(':').size == 1
+      namespace = 'xmlns:ss'
+      workbook = @doc.at('Workbook')
+      workbook.add_namespace_definition('ss', 'urn:schemas-microsoft-com:office:spreadsheet')
+    end
+    @namespace = namespace.split(':').last || 'ss'
     super(filename, options)
     @formula = {}
     @style = {}

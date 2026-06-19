@@ -3,8 +3,8 @@ require 'test_helper'
 require 'stringio'
 
 class TestRooExcel < Minitest::Test
-  def with_spreadsheet(name)
-    yield ::Roo::Spreadsheet.open(File.join(TESTDIR, "#{name}.xls"))
+  def with_spreadsheet(name, options = {})
+    yield ::Roo::Spreadsheet.open(File.join(TESTDIR, "#{name}.xls"), options)
   end
 
   # Excel can only read the cell's value
@@ -944,6 +944,12 @@ Sheet 3:
         assert File.exist?(datetime_csv_file)
         assert_equal '', file_diff('test/files/so_datetime.csv', datetime_csv_file)
       end
+    end
+  end
+
+  def test_only_visible_sheets
+    with_spreadsheet('hidden', { only_visible_sheets: true }) do |oo|
+      assert_equal ['VisibleSheet'], oo.sheets
     end
   end
 

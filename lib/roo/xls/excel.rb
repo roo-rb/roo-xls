@@ -49,7 +49,9 @@ module Roo
     end
 
     def worksheets
-      @worksheets ||= workbook.worksheets
+      @worksheets ||= workbook.worksheets.filter do |worksheet|
+        !@options[:only_visible_sheets] || worksheet.visibility == :visible
+      end
     end
 
     def encoding=(codepage)

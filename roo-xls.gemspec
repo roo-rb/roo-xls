@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version  = ">= 3.1.0"
 
-  spec.add_dependency "roo", ">= 2.0.0", "< 4"
+  spec.add_dependency "roo", ">= 2.0.0", "< 5"
   spec.add_dependency "spreadsheet", ">= 1.3.4", "< 2"
   spec.add_dependency "csv"
 
